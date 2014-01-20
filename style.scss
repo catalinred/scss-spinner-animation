@@ -1,0 +1,48 @@
+/**
+ * Variables
+ */
+ 
+$circleDiameter: 20px;
+$shiftLeft: round($circleDiameter/4);
+$shiftTop: round($circleDiameter/8);
+
+/**
+ *  The circle wrapper
+ */
+ 
+.spinner {  
+  width: $circleDiameter; 
+  height: $circleDiameter;
+  position: fixed;
+  top: 50%; left: 50%;
+  margin: -$circleDiameter/2; 
+  background-color: #888;
+  box-shadow: 0 2px 1px rgba(0,0,0,.3) inset;
+  border-radius: 50%;
+
+/**
+ * The inner, rotating circle
+ */
+ 
+  &:after {
+    content: '';
+    position: absolute;
+    left: $shiftLeft; 
+    top: $shiftTop;
+    background-color: #fff;
+    height: $circleDiameter/5; 
+    width: $circleDiameter/5;    
+    animation: spin 1s linear infinite;
+    border-radius: 50%;
+    transform-origin: ($circleDiameter - $shiftLeft*2)/2 
+                      ($circleDiameter - $shiftTop*2)/2;  
+  }
+}
+
+/**
+ * Spin it, baby!
+ */
+ 
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
