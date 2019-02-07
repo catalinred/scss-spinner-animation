@@ -2,4 +2,4 @@
 
 This is a SCSS spinner animation inspired by WordPress Admin.
 
-http://red-team-design.com/simple-scss-spinner-animation/
+https://catalin.red/simple-scss-spinner-animation/
